@@ -1,3 +1,4 @@
-public class francis {
+//bird
+public class francis extends Animal{
     
 }
