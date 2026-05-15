@@ -8,16 +8,16 @@ public class AnimalController {
         this.zoo = new ArrayList<>();
     }
 
-    public void addMammal(String name, int age, String habitat, String fur) {
-        zoo.add(new Mammal(name, age, habitat, fur));
+    public void addMammal(String n, int a, String h, String f, boolean d) {
+        zoo.add(new Mammal(n, a, h, f, d));
     }
 
-    public void addBird(String name, int age, String habitat, double wing) {
-        zoo.add(new Bird(name, age, habitat, wing));
+    public void addBird(String n, int a, String h, double w, boolean f) {
+        zoo.add(new Bird(n, a, h, w, f));
     }
 
-    public void addReptile(String name, int age, String habitat, boolean coldBlooded) {
-        zoo.add(new Reptile(name, age, habitat, coldBlooded));
+    public void addReptile(String n, int a, String h, String s, boolean c) {
+        zoo.add(new Reptile(n, a, h, s, c));
     }
 
     public List<Animal> getAllAnimals() {

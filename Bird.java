@@ -1,17 +1,21 @@
 public class Bird extends Animal {
     private double wingSpan;
+    private boolean canFly;
 
-    public Bird(String name, int age, String habitat, double wingSpan) {
-        super(name, age, habitat);
+    // This is the constructor that was missing or mismatched:
+    public Bird(String name, int age, String habitat, double wingSpan, boolean canFly) {
+        super(name, age, habitat); // This sends the common data to the Animal class
         this.wingSpan = wingSpan;
+        this.canFly = canFly;
     }
 
     @Override
-    public String eat() { return getName() + " is pecking at seeds or insects."; }
+    public String makeSound() {
+        return "Chirp Chirp";
+    }
 
     @Override
-    public String move() { return getName() + " is flying through the sky."; }
-
-    @Override
-    public String makeSound() { return "Chirp! Chirp!"; }
+    public String toString() {
+        return super.toString() + String.format(" | Wingspan: %.1fm | Can Fly: %b", wingSpan, canFly);
+    }
 }

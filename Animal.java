@@ -1,7 +1,7 @@
 public abstract class Animal {
-    private String name;
-    private int age;
-    private String habitat;
+    protected String name;
+    protected int age;
+    protected String habitat;
 
     public Animal(String name, int age, String habitat) {
         this.name = name;
@@ -9,19 +9,11 @@ public abstract class Animal {
         this.habitat = habitat;
     }
 
-    // Abstract methods: Subclasses MUST implement these
-    public abstract String eat();
-    public abstract String move();
+    // Abstract method: every animal makes a sound, but in their own way
     public abstract String makeSound();
-
-    // Getters for the Controller/UI
-    public String getName() { return name; }
-    public int getAge() { return age; }
-    public String getHabitat() { return habitat; }
 
     @Override
     public String toString() {
-        return String.format("[%s] Name: %s, Age: %d, Habitat: %s", 
-                this.getClass().getSimpleName(), name, age, habitat);
+        return String.format("Name: %s | Age: %d | Habitat: %s", name, age, habitat);
     }
 }
